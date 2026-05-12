@@ -103,7 +103,7 @@ if ($con) {
                             <th><?= escape($row['lastname']) ?></th>
                             <th><?= escape($row['username']) ?></th>
                             <th><?= escape($row['email']) ?></th>
-                            <th><a href="update_user.php?id=<?= urlencode($row['id']) ?>" class="users-table--edit">Editar</a></th>
+                            <th><a href="edit_user.php?id=<?= urlencode($row['id']) ?>" class="users-table--edit">Editar</a></th>
                             <th><a href="delete_user.php?id=<?= urlencode($row['id']) ?>" class="users-table--delete" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</a></th>
                         </tr>
                     <?php endforeach; ?>
