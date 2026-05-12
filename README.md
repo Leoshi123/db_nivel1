@@ -125,26 +125,31 @@ function connection() {
 
 ## Diagrama del Flujo
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         index.php                            │
-│                    (Página Principal)                       │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-          ┌───────────────┼───────────────┐
-          │               │               │
-          ▼               ▼               ▼
-   ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-   │  Formulario │ │   Lista de   │ │   Botones     │
-   │   Crear     │ │   Usuarios   │ │   Acciones    │
-   └──────┬──────┘ └──────────────┘ └──────┬───────┘
-          │                                │
-          ▼                                ▼
-┌─────────────────┐              ┌─────────────────┐
-│ insert_user.php │              │ edit/delete    │
-│   (CREATE)      │              │  (UPDATE/      │
-└─────────────────┘              │   DELETE)       │
-                                └─────────────────┘
+```mermaid
+graph TD
+    A[index.php<br/>Página Principal] --> B{Acciones}
+    B --> C[Formulario<br/>Crear Usuario]
+    B --> D[Tabla<br/>Listar Usuarios]
+    B --> E[Botones<br/>Editar / Eliminar]
+    
+    C --> F[insert_user.php]
+    F -->|"Éxito"| A
+    F -->|"Error"| A
+    
+    E --> G[edit_user.php]
+    G -->|"Éxito"| A
+    G -->|"Error"| A
+    
+    E --> H[delete_user.php]
+    H -->|"Éxito"| A
+    H -->|"Error"| A
+    
+    F -.-> I[(users table)]
+    G -.-> I
+    H -.-> I
+    
+    style A fill:#e1f5fe
+    style I fill:#fff3e0
 ```
 
 ---
