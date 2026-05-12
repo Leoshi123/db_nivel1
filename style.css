@@ -1,0 +1,248 @@
+/* Reset y base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #eaeaea;
+    padding: 40px 20px;
+}
+
+/* Header principal */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00d9ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #00d9ff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Contenedores */
+.users-form, .users-table {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Formulario */
+.users-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.users-form form input {
+    padding: 16px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.users-form form input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.users-form form input:focus {
+    border-color: #00d9ff;
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.users-form form input[type="submit"] {
+    background: linear-gradient(135deg, #00d9ff, #00ff88);
+    border: none;
+    color: #1a1a2e;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.users-form form input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+}
+
+/* Tabla */
+.users-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table thead tr {
+    background: linear-gradient(90deg, rgba(0, 217, 255, 0.2), rgba(0, 255, 136, 0.2));
+}
+
+table th {
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+    color: #00d9ff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+}
+
+table tbody tr {
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+table tbody tr:hover {
+    background: rgba(0, 217, 255, 0.1);
+    transform: scale(1.01);
+}
+
+table td {
+    padding: 16px;
+    border: none;
+}
+
+/* Botones de acción */
+.users-table--edit,
+.users-table--delete {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.users-table--edit {
+    background: linear-gradient(135deg, #009688, #00bcd4);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.3);
+}
+
+.users-table--edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
+}
+
+.users-table--delete {
+    background: linear-gradient(135deg, #b11e1e, #f44336);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(177, 30, 30, 0.3);
+}
+
+.users-table--delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.5);
+}
+
+/* Alerts */
+.alert {
+    padding: 20px 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-error {
+    background: linear-gradient(135deg, rgba(177, 30, 30, 0.9), rgba(244, 67, 54, 0.9));
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    color: #fff;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(0, 150, 136, 0.9), rgba(0, 255, 136, 0.9));
+    border: 1px solid rgba(0, 255, 136, 0.5);
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .users-form, .users-table {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    table th, table td {
+        padding: 12px 8px;
+    }
+
+    .users-table--edit, .users-table--delete {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #00d9ff, #00ff88);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #00ff88, #00d9ff);
+}
